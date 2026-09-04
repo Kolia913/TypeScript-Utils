@@ -11,7 +11,7 @@ type OptionalFields<T> = {
 type StateFlag<K extends string> = `has${Capitalize<K>}`;
 
 type BuilderState<T> = {
-  [K in RequiredFields<T> as StateFlag<string & K>]-?: IsRequired<
+  [K in RequiredFields<T> as StateFlag<string & K>]: IsRequired<
     T,
     K
   > extends never
